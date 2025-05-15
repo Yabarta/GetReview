@@ -69,6 +69,24 @@ export default function RestaurantDetailScreen ({ navigation, route }) {
             </TextRegular>
           </View>
         </Pressable>
+        <Pressable
+          onPress={() => navigation.navigate('CreateReviewScreen', { id: restaurant.id })
+          }
+          style={({ pressed }) => [
+            {
+              backgroundColor: pressed
+                ? GlobalStyles.brandGreenTap
+                : GlobalStyles.brandGreen
+            },
+            styles.button
+          ]}>
+          <View style={[{ flex: 1, flexDirection: 'row', justifyContent: 'center' }]}>
+            <MaterialCommunityIcons name='plus-circle' color={'white'} size={20} />
+            <TextRegular textStyle={styles.text}>
+              Create review
+            </TextRegular>
+          </View>
+        </Pressable>
       </View>
     )
   }

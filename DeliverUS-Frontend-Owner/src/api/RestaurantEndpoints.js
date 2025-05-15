@@ -19,6 +19,10 @@ function create (data) {
   return post('restaurants', data)
 }
 
+function createReview (id,data) {
+  return get(`/restaurants/${id}/reviews`,data)
+}
+
 function update (id, data) {
   return put(`restaurants/${id}`, data)
 }
@@ -27,4 +31,4 @@ function remove (id) {
   return destroy(`restaurants/${id}`)
 }
 
-export { getAll, getDetail, getRestaurantCategories, create, update, remove, getReviews }
+export { getAll, getDetail, getRestaurantCategories, create, update, remove, getReviews, createReview }

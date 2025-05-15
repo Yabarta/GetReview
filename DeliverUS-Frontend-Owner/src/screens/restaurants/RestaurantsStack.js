@@ -7,6 +7,7 @@ import EditRestaurantScreen from './EditRestaurantScreen'
 import RestaurantDetailScreen from './RestaurantDetailScreen'
 import RestaurantsScreen from './RestaurantsScreen'
 import ControlPanelScreen from '../controlPanel/ControlPanelScreen'
+import CreateReviewScreen from './CreateReviewScreen'
 
 const Stack = createNativeStackNavigator()
 
@@ -54,6 +55,12 @@ export default function RestaurantsStack () {
         component={ControlPanelScreen}
         options={{
           title: 'Reviews'
+        }} />
+        <Stack.Screen
+        name='CreateReviewScreen'
+        component={CreateReviewScreen}
+        options={{
+          title: 'Create Review'
         }} />
     </Stack.Navigator>
   )

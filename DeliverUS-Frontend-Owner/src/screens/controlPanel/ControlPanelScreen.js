@@ -28,7 +28,6 @@ export default function ControlPanelScreen ({navigation,route}) {
   const fetchReviews = async () => {
     try {
       const fetchedReviews = await getReviews(route.params.id)
-      console.log('Reviews: ',fetchedReviews)
       setReviews(fetchedReviews)
     } catch (error) {
       showMessage({
@@ -59,7 +58,7 @@ export default function ControlPanelScreen ({navigation,route}) {
     const renderReviews = ({ item }) => {
       console.log('Review: ', item)
     return (
-      <View>
+      <View style = {styles.containerReview}>
         <TextRegular style = {styles.stars}>Stars: {item.stars}</TextRegular>
         <TextRegular style = {styles.text}>{item.body}</TextRegular>
       </View>
@@ -87,7 +86,9 @@ const styles = StyleSheet.create({
   },
   containerReview: {
     flex: 1,
-    backgroundColor: 'grey',
+    marginTop: 20,
+    padding: 10,
+    backgroundColor: 'pink',
     borderRadius: 15,
     borderColor: 'black',
     justifyContent: 'center',
@@ -108,7 +109,7 @@ const styles = StyleSheet.create({
   },
   stars: {
     fontSize: 18,
-    color: 'gold',
+    color: 'red',
     fontWeight: 'bold',
     alignSelf: 'center',
     marginLeft: 5
